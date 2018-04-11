@@ -1,14 +1,20 @@
 import React from 'react';
 import App from '../containers/App';
-import Test from '../page/Test';
+import HomePage from '../page/HomePage';
+import InfoPage from '../page/InfoPage';
 
 export const routes = [
 	{
 		...App,
 		routes: [
 			{
-				...Test,
-				path: '/test'
+				...HomePage,
+				path: '/',
+				exact: true
+			},
+			{
+				...InfoPage,
+				path: '/info'
 			}
 		]
 	}

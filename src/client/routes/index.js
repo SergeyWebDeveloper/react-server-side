@@ -2,6 +2,7 @@ import React from 'react';
 import App from '../containers/App';
 import HomePage from '../page/HomePage';
 import InfoPage from '../page/InfoPage';
+import NotFound from '../page/NotFound';
 
 export const routes = [
 	{
@@ -15,8 +16,10 @@ export const routes = [
 			{
 				...InfoPage,
 				path: '/info'
+			},
+			{
+				...NotFound
 			}
 		]
 	}
 ];
-

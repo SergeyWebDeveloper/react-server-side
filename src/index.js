@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.get('*', (req, res) => {
 
 	const promises = matchRoutes(routes,req.path).map(({route})=>{
-		return route.loadData ? route.loadData(store,req) : null;
+		return route.loadData ? route.loadData(store,req.url) : null;
 	});
 	Promise.all(promises).then(() => {
 		const context = {};

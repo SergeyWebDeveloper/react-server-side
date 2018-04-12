@@ -3,6 +3,7 @@ import App from '../containers/App';
 import HomePage from '../page/HomePage';
 import InfoPage from '../page/InfoPage';
 import NotFound from '../page/NotFound';
+import CurrentResultTeam from '../page/CurrentResultTeam';
 
 export const routes = [
 	{
@@ -15,10 +16,15 @@ export const routes = [
 			},
 			{
 				...InfoPage,
-				path: '/info'
+				path: '/info',
 			},
 			{
-				...NotFound
+				...CurrentResultTeam,
+				path: '/:id'
+			},
+			{
+				...NotFound,
+				path: '*'
 			}
 		]
 	}

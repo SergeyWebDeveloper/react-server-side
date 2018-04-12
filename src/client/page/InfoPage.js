@@ -4,10 +4,12 @@ import {connect} from 'react-redux';
 import {fetchInfoTeam} from '../actions';
 import {Team} from '../components/Team';
 
+
 class InfoPage extends Component {
-	// componentDidMount(){
-	// 	this.props.fetchInfoTeam();
-	// }
+	componentDidMount(){
+		this.props.fetchInfoTeam();
+	}
+
 	renderInfo(){
 		return <ul className='collection'>
 			{_.map(this.props.teamInfo.teams,(team)=>{

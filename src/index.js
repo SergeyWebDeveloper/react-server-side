@@ -9,11 +9,10 @@ const app = express();
 
 app.use(express.static('public'));
 
-
 app.get('*', (req, res) => {
 
 	const promises = matchRoutes(routes,req.path).map(({route})=>{
-		return route.loadData ? route.loadData(store) : null;
+		return route.loadData ? route.loadData(store,req) : null;
 	});
 	Promise.all(promises).then(() => {
 		const context = {};
